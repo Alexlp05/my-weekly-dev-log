@@ -45,7 +45,9 @@ const Day1 = () => {
           <h3 className="text-2xl font-bold mb-4">Exemple de vidéo explicative</h3>
           <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
             <p className="text-muted-foreground">
-              Insérer votre vidéo ici (YouTube, Vimeo, etc.)
+              <video> Test
+                <source src="https://www.youtube.com/watch?v=yBQMuExWIFs" type="video/mp4" />
+              </video>
             </p>
           </div>
         </section>
