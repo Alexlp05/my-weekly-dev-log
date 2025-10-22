@@ -43,12 +43,15 @@ const Day1 = () => {
 
         <section className="bg-card rounded-lg p-6 shadow-card">
           <h3 className="text-2xl font-bold mb-4">Exemple de vidéo explicative</h3>
-          <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-            <p className="text-muted-foreground">
-              <video> Test
-                <source src="https://www.youtube.com/watch?v=yBQMuExWIFs" type="video/mp4" />
-              </video>
-            </p>
+          <div className="aspect-video bg-muted rounded-lg flex items-center justify-center overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/yBQMuExWIFs"
+              title="Exemple de vidéo explicative"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </section>
 
