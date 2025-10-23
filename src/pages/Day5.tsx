@@ -100,10 +100,11 @@ const Day5 = () => {
           <ImageHero src="/images/hero-day5.jpg" heading="Jour 5" subheading="Déploiement" />
           <div className="mt-6">
             <ImageGallery
+              variant="cards"
               items={[
-                { src: "/images/day5-1.jpg", alt: "Deploy 1", title: "Deploy 1" },
-                { src: "/images/day5-2.jpg", alt: "Deploy 2", title: "Deploy 2" },
-                { src: "/images/day5-3.jpg", alt: "Deploy 3", title: "Deploy 3" },
+                { src: "/images/day5-1.jpg", alt: "Deploy 1", title: "Pré-prod", description: "Environnement pré-production", caption: "Validation finale" },
+                { src: "/images/day5-2.jpg", alt: "Deploy 2", title: "Prod", description: "Mise en production", caption: "URL publique" },
+                { src: "/images/day5-3.jpg", alt: "Deploy 3", title: "Monitoring", description: "Surveillance", caption: "Alertes en place" },
               ]}
             />
           </div>

@@ -37,11 +37,13 @@ const Day2 = () => {
           <ImageHero src="/images/hero-day2.jpg" heading="Jour 2" subheading="Installation" />
           <div className="mt-6">
             <ImageGallery
+              variant="masonry"
               items={[
-                { src: "/images/day2-1.jpg", alt: "Setup", title: "Setup", description: "Outils" },
-                { src: "/images/day2-2.jpg", alt: "Config", title: "Config", description: "Tailwind" },
+                { src: "/images/day2-1.jpg", alt: "Setup", title: "Setup", description: "Outils" , caption: "Installation des dépendances"},
+                { src: "/images/day2-2.jpg", alt: "Config", title: "Config", description: "Tailwind", caption: "Configuration CSS" },
+                { src: "/images/day2-3.jpg", alt: "CI", title: "CI", description: "Pipelines", caption: "Intégration continue" },
               ]}
-              columns={2}
+              columns={3}
             />
           </div>
         </section>

@@ -63,10 +63,11 @@ const Day3 = () => {
           <ImageHero src="/images/hero-day3.jpg" heading="Jour 3" subheading="Features" />
           <div className="mt-6">
             <ImageGallery
+              variant="overlay"
               items={[
-                { src: "/images/day3-1.jpg", alt: "Feature 1", title: "Feature 1" },
-                { src: "/images/day3-2.jpg", alt: "Feature 2", title: "Feature 2" },
-                { src: "/images/day3-3.jpg", alt: "Feature 3", title: "Feature 3" },
+                { src: "/images/day3-1.jpg", alt: "Feature 1", title: "Authentication", caption: "Login flow" },
+                { src: "/images/day3-2.jpg", alt: "Feature 2", title: "API", caption: "Endpoints principaux" },
+                { src: "/images/day3-3.jpg", alt: "Feature 3", title: "UI", caption: "Composants réutilisables" },
               ]}
             />
           </div>

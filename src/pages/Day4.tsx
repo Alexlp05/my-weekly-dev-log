@@ -85,9 +85,10 @@ const Day4 = () => {
           <ImageHero src="/images/hero-day4.jpg" heading="Jour 4" subheading="Optimisation" />
           <div className="mt-6">
             <ImageGallery
+              variant="grid"
               items={[
-                { src: "/images/day4-1.jpg", alt: "Perf 1", title: "Perf 1" },
-                { src: "/images/day4-2.jpg", alt: "Perf 2", title: "Perf 2" },
+                { src: "/images/day4-1.jpg", alt: "Perf 1", title: "Profiling", caption: "Analyse CPU" },
+                { src: "/images/day4-2.jpg", alt: "Perf 2", title: "Bundle", caption: "Réduction du bundle" },
               ]}
               columns={2}
             />

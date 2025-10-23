@@ -60,10 +60,29 @@ const Day1 = () => {
           <ImageHero src="/images/hero-day1.jpg" heading="Jour 1" subheading="Début du projet" />
           <div className="mt-6">
             <ImageGallery
+              variant="cards"
               items={[
-                { src: "/images/day1-1.jpg", alt: "Étape 1", title: "Étape 1", description: "Installation" },
-                { src: "/images/day1-2.jpg", alt: "Étape 2", title: "Étape 2", description: "Configuration" },
-                { src: "/images/day1-3.jpg", alt: "Étape 3", title: "Étape 3", description: "Maquettes" },
+                {
+                  src: "/images/day1-1.jpg",
+                  alt: "Étape 1",
+                  title: "Installation",
+                  description: "Préparation des outils",
+                  caption: "Mise en place des postes de travail",
+                },
+                {
+                  src: "/images/day1-2.jpg",
+                  alt: "Étape 2",
+                  title: "Configuration",
+                  description: "Réglages initiaux",
+                  caption: "Config du repo et des outils",
+                },
+                {
+                  src: "/images/day1-3.jpg",
+                  alt: "Étape 3",
+                  title: "Maquettes",
+                  description: "Wireframes",
+                  caption: "Esquisses de l'interface",
+                },
               ]}
               columns={3}
             />
