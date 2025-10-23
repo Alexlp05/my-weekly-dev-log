@@ -1,4 +1,5 @@
 import DayDetailLayout from "@/components/DayDetailLayout";
+import { ImageHero, ImageGallery } from "@/components/ImageBlocks";
 
 const Day4 = () => {
   return (
@@ -76,6 +77,20 @@ const Day4 = () => {
               <span className="text-2xl">🌊</span>
               <span className="text-muted-foreground">Effets de scroll parallax subtils</span>
             </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-4">Galerie d'images</h2>
+          <ImageHero src="/images/hero-day4.jpg" heading="Jour 4" subheading="Optimisation" />
+          <div className="mt-6">
+            <ImageGallery
+              items={[
+                { src: "/images/day4-1.jpg", alt: "Perf 1", title: "Perf 1" },
+                { src: "/images/day4-2.jpg", alt: "Perf 2", title: "Perf 2" },
+              ]}
+              columns={2}
+            />
           </div>
         </section>
 

@@ -1,4 +1,5 @@
 import DayDetailLayout from "@/components/DayDetailLayout";
+import { ImageHero, ImageGallery } from "@/components/ImageBlocks";
 
 const Day2 = () => {
   return (
@@ -29,6 +30,20 @@ const Day2 = () => {
             et des composants. L'architecture choisie permet une scalabilité future
             et facilite la maintenance du code.
           </p>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-4">Galerie d'images</h2>
+          <ImageHero src="/images/hero-day2.jpg" heading="Jour 2" subheading="Installation" />
+          <div className="mt-6">
+            <ImageGallery
+              items={[
+                { src: "/images/day2-1.jpg", alt: "Setup", title: "Setup", description: "Outils" },
+                { src: "/images/day2-2.jpg", alt: "Config", title: "Config", description: "Tailwind" },
+              ]}
+              columns={2}
+            />
+          </div>
         </section>
 
         <section>

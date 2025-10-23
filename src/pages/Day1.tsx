@@ -1,4 +1,5 @@
 import DayDetailLayout from "@/components/DayDetailLayout";
+import { ImageHero, ImageGallery } from "@/components/ImageBlocks";
 
 const Day1 = () => {
   return (
@@ -50,6 +51,21 @@ const Day1 = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
+            />
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-4">Galerie d'images</h2>
+          <ImageHero src="/images/hero-day1.jpg" heading="Jour 1" subheading="Début du projet" />
+          <div className="mt-6">
+            <ImageGallery
+              items={[
+                { src: "/images/day1-1.jpg", alt: "Étape 1", title: "Étape 1", description: "Installation" },
+                { src: "/images/day1-2.jpg", alt: "Étape 2", title: "Étape 2", description: "Configuration" },
+                { src: "/images/day1-3.jpg", alt: "Étape 3", title: "Étape 3", description: "Maquettes" },
+              ]}
+              columns={3}
             />
           </div>
         </section>

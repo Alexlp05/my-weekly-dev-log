@@ -1,4 +1,5 @@
 import DayDetailLayout from "@/components/DayDetailLayout";
+import { ImageHero, ImageGallery } from "@/components/ImageBlocks";
 
 const Day5 = () => {
   return (
@@ -92,6 +93,20 @@ const Day5 = () => {
             Rédaction de la documentation technique et utilisateur. Cette documentation
             facilitera la maintenance et les évolutions futures du projet.
           </p>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold mb-4">Galerie d'images</h2>
+          <ImageHero src="/images/hero-day5.jpg" heading="Jour 5" subheading="Déploiement" />
+          <div className="mt-6">
+            <ImageGallery
+              items={[
+                { src: "/images/day5-1.jpg", alt: "Deploy 1", title: "Deploy 1" },
+                { src: "/images/day5-2.jpg", alt: "Deploy 2", title: "Deploy 2" },
+                { src: "/images/day5-3.jpg", alt: "Deploy 3", title: "Deploy 3" },
+              ]}
+            />
+          </div>
         </section>
 
         <section className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg p-8 text-center">
