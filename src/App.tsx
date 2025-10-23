@@ -10,12 +10,14 @@ import Day3 from "./pages/Day3";
 import Day4 from "./pages/Day4";
 import Day5 from "./pages/Day5";
 import NotFound from "./pages/NotFound";
+import MusicPlayer from "./components/MusicPlayer";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <MusicPlayer />
       <Toaster />
       <Sonner />
       <BrowserRouter>
