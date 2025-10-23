@@ -4,57 +4,57 @@ const Timeline = () => {
   const projectDays = [
     {
       day: 1,
-      date: "Lundi",
-      title: "Planification et conception",
-      description: "Définition des objectifs et architecture du projet",
+      date: "Monday",
+      title: "Planning & Design",
+      description: "Defining goals and the technical approach",
       achievements: [
-        "Analyse des besoins et définition du scope",
-        "Création des maquettes et wireframes",
-        "Mise en place de l'environnement de développement",
+        "Requirement analysis and scope definition",
+        "Wireframes and early mockups",
+        "Development environment setup",
       ],
     },
     {
       day: 2,
-      date: "Mardi",
-      title: "Développement des fondations",
-      description: "Mise en place de la structure de base",
+      date: "Tuesday",
+      title: "3D Modeling & Setup",
+      description: "Modeling parts and configuring tools",
       achievements: [
-        "Configuration du projet et des outils",
-        "Création de la structure des composants",
-        "Implémentation du design system",
+        "Project configuration and tooling",
+        "Component structure planning",
+        "Design system foundations",
       ],
     },
     {
       day: 3,
-      date: "Mercredi",
-      title: "Fonctionnalités principales",
-      description: "Développement des features clés",
+      date: "Wednesday",
+      title: "Production Start",
+      description: "Beginning laser cuts and Cricut work",
       achievements: [
-        "Implémentation des fonctionnalités principales",
-        "Intégration des APIs nécessaires",
-        "Tests des composants critiques",
+        "Laser cutting main wooden pieces",
+        "Preparing Cricut cut patterns for fish and waves",
+        "Site documentation and progress tracking",
       ],
     },
     {
       day: 4,
-      date: "Jeudi",
-      title: "Optimisation et polish",
-      description: "Amélioration de l'expérience utilisateur",
+      date: "Thursday",
+      title: "Assembly & Testing",
+      description: "Assembling the carousel and testing rotation",
       achievements: [
-        "Optimisation des performances",
-        "Amélioration de l'accessibilité",
-        "Ajustements du design et animations",
+        "Performance checks and adjustments",
+        "Assembly and fit testing",
+        "Visual refinements and small animations",
       ],
     },
     {
       day: 5,
-      date: "Vendredi",
-      title: "Tests et déploiement",
-      description: "Validation finale et mise en production",
+      date: "Friday",
+      title: "Finalization & Deployment",
+      description: "Polish, documentation and deployment",
       achievements: [
-        "Tests end-to-end complets",
-        "Corrections des bugs identifiés",
-        "Déploiement et documentation",
+        "Full end-to-end testing",
+        "Bug fixes and final tweaks",
+        "Deployment and project documentation",
       ],
     },
   ];
@@ -63,10 +63,10 @@ const Timeline = () => {
     <section className="py-16 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Chronologie du projet
+          Project timeline
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Découvrez l'évolution de mon projet jour après jour, des premières idées jusqu'à la réalisation finale
+          Follow the project's progression day by day, from first ideas to the finished fish carousel.
         </p>
       </div>
 

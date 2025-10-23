@@ -3,7 +3,7 @@ import { ImageHero, ImageGallery } from "@/components/ImageBlocks";
 
 const Day4 = () => {
   return (
-    <DayDetailLayout day={4} date="Jeudi" title="Optimisation et polish">
+    <DayDetailLayout day={4} date="Thursday" title="Assembly & First Tests">
       <div className="space-y-8">
         <section>
           <h2 className="text-3xl font-bold mb-4">Amélioration des performances</h2>
@@ -81,14 +81,14 @@ const Day4 = () => {
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Galerie d'images</h2>
-          <ImageHero src="/images/hero-day4.jpg" heading="Jour 4" subheading="Optimisation" />
+          <h2 className="text-3xl font-bold mb-4">Image gallery</h2>
+          <ImageHero src="/images/hero-day4.jpg" heading="Day 4" subheading="Assembly & testing" />
           <div className="mt-6">
             <ImageGallery
               variant="grid"
               items={[
-                { src: "/images/day4-1.jpg", alt: "Perf 1", title: "Profiling", caption: "Analyse CPU" },
-                { src: "/images/day4-2.jpg", alt: "Perf 2", title: "Bundle", caption: "Réduction du bundle" },
+                { src: "/images/day4-1.jpg", alt: "Assembly", title: "Assembly", caption: "Manual assembly of parts" },
+                { src: "/images/day4-2.jpg", alt: "Rotation test", title: "Rotation test", caption: "First rotation tests" },
               ]}
               columns={2}
             />

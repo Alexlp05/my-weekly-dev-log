@@ -3,37 +3,34 @@ import { ImageHero, ImageGallery } from "@/components/ImageBlocks";
 
 const Day3 = () => {
   return (
-    <DayDetailLayout day={3} date="Mercredi" title="Fonctionnalités principales">
+    <DayDetailLayout day={3} date="Wednesday" title="Start of Production">
       <div className="space-y-8">
         <section>
-          <h2 className="text-3xl font-bold mb-4">Développement des features clés</h2>
+          <h2 className="text-3xl font-bold mb-4">Feature development</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Journée intensive de développement des fonctionnalités principales.
-            Implémentation de la logique métier et des interactions utilisateur.
+            A focused day of building the main features: implementing core logic and refining user interactions.
           </p>
         </section>
 
         <section className="bg-card rounded-lg p-6 shadow-card">
-          <h3 className="text-2xl font-bold mb-4">Fonctionnalités implémentées</h3>
+          <h3 className="text-2xl font-bold mb-4">Implemented features</h3>
           <div className="space-y-4">
             <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-semibold text-lg mb-2">Navigation et routing</h4>
+              <h4 className="font-semibold text-lg mb-2">Routing & navigation</h4>
               <p className="text-muted-foreground">
-                Mise en place d'un système de navigation fluide entre les différentes
-                pages de l'application avec React Router.
+                Implemented a smooth navigation system across the site's pages with React Router.
               </p>
             </div>
             <div className="border-l-4 border-accent pl-4">
-              <h4 className="font-semibold text-lg mb-2">Gestion d'état</h4>
+              <h4 className="font-semibold text-lg mb-2">State management</h4>
               <p className="text-muted-foreground">
-                Implémentation de la gestion d'état avec React Query pour
-                une synchronisation efficace des données.
+                Set up state management using React Query to keep data synchronized and cache-friendly.
               </p>
             </div>
             <div className="border-l-4 border-primary pl-4">
-              <h4 className="font-semibold text-lg mb-2">Interactions utilisateur</h4>
+              <h4 className="font-semibold text-lg mb-2">User interactions</h4>
               <p className="text-muted-foreground">
-                Développement des formulaires, boutons d'action et feedbacks visuels.
+                Built forms, action buttons, and visual feedback patterns to improve the user experience.
               </p>
             </div>
           </div>
@@ -49,37 +46,35 @@ const Day3 = () => {
         </section>
 
         <section className="bg-secondary/50 rounded-lg p-6">
-          <h3 className="text-xl font-semibold mb-3">Tests réalisés :</h3>
+          <h3 className="text-xl font-semibold mb-3">Tests performed</h3>
           <ul className="space-y-2 text-muted-foreground">
-            <li>✓ Tests unitaires des composants critiques</li>
-            <li>✓ Validation des flux utilisateur principaux</li>
-            <li>✓ Tests de performance et optimisation</li>
-            <li>✓ Vérification de la responsivité</li>
+            <li>✓ Unit tests for critical components</li>
+            <li>✓ Validation of core user flows</li>
+            <li>✓ Performance testing and tuning</li>
+            <li>✓ Responsiveness checks on different screens</li>
           </ul>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Galerie d'images</h2>
-          <ImageHero src="/images/hero-day3.jpg" heading="Jour 3" subheading="Features" />
+          <h2 className="text-3xl font-bold mb-4">Image gallery</h2>
+          <ImageHero src="/images/hero-day3.jpg" heading="Day 3" subheading="Production & cutting" />
           <div className="mt-6">
             <ImageGallery
               variant="overlay"
               items={[
                 { src: "/images/day3-1.jpg", alt: "Feature 1", title: "Authentication", caption: "Login flow" },
-                { src: "/images/day3-2.jpg", alt: "Feature 2", title: "API", caption: "Endpoints principaux" },
-                { src: "/images/day3-3.jpg", alt: "Feature 3", title: "UI", caption: "Composants réutilisables" },
+                { src: "/images/day3-2.jpg", alt: "Cricut", title: "Cricut cuts", caption: "Fish shapes and wave patterns" },
+                { src: "/images/day3-3.jpg", alt: "Site", title: "Site progress", caption: "Documentation and site setup" },
               ]}
             />
           </div>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Challenges rencontrés</h2>
+          <h2 className="text-3xl font-bold mb-4">Challenges faced</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Cette journée a présenté quelques défis techniques, notamment dans
-            la synchronisation des états et la gestion des erreurs. Ces problèmes
-            ont été résolus grâce à une architecture bien pensée et des patterns
-            éprouvés.
+            We encountered some technical challenges around state synchronization and error handling. These
+            were addressed by applying robust architectural patterns and careful testing.
           </p>
         </section>
       </div>

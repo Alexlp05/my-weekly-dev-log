@@ -27,7 +27,7 @@ const DayDetailLayout = ({ day, date, title, children }: DayDetailLayoutProps) =
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div className="flex items-center gap-3">
-            <span className="text-sm font-semibold text-primary">Jour {day}</span>
+            <span className="text-sm font-semibold text-primary">Day {day}</span>
             <span className="text-sm text-muted-foreground">•</span>
             <span className="text-sm text-muted-foreground">{date}</span>
           </div>
@@ -59,7 +59,7 @@ const DayDetailLayout = ({ day, date, title, children }: DayDetailLayoutProps) =
             className="gap-2"
           >
             <ArrowLeft className="h-4 w-4" />
-            Retour à l'accueil
+            Back to home
           </Button>
           {day < 5 && (
             <Button
@@ -67,7 +67,7 @@ const DayDetailLayout = ({ day, date, title, children }: DayDetailLayoutProps) =
               onClick={() => navigate(`/day-${day + 1}`)}
               className="gradient-hero text-primary-foreground"
             >
-              Jour suivant
+              Next day
             </Button>
           )}
         </div>

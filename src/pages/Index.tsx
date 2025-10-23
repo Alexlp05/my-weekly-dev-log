@@ -23,13 +23,13 @@ const Index = () => {
         <div className="relative z-10 text-center max-w-4xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <span className="bg-gradient-to-r from-primary via-accent to-primary-glow bg-clip-text text-transparent">
-              Mon Projet en 5 Jours
+            Le Manège De Poséidon
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Une semaine intensive de développement, d'apprentissage et de création.
-            Découvrez l'histoire complète de ce projet.
+          A poetic, hands-on project that blends craft and digital fabrication. Follow our five-day journey from first sketches
+          through laser-cut woodwork, Cricut assemblies and 3D printing, to the final Fish Carousel — a playful object inspired by the sea.
           </p>
 
           <div className="flex gap-4 justify-center pt-6">
@@ -38,14 +38,14 @@ const Index = () => {
               onClick={scrollToTimeline}
               className="gradient-hero shadow-elegant hover:shadow-2xl transition-smooth text-primary-foreground"
             >
-              Découvrir le projet
+              Discover the project
             </Button>
             <Button 
               size="lg" 
               variant="outline"
               className="border-2 hover:border-primary transition-smooth"
             >
-              En savoir plus
+              Learn more
             </Button>
           </div>
         </div>
@@ -66,7 +66,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-          <p>Projet réalisé avec passion • {new Date().getFullYear()}</p>
+         <p>Project created with passion · {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>
