@@ -2,19 +2,18 @@ import DayDetailLayout from "@/components/DayDetailLayout";
 
 const Day1 = () => {
   return (
-    <DayDetailLayout day={1} date="Lundi" title="Planification et conception">
+    <DayDetailLayout day={1} date="Lundi" title="Lancement du projet et technique de découpe">
       <div className="space-y-8">
         <section>
-          <h2 className="text-3xl font-bold mb-4">Objectifs de la journée</h2>
+          <h2 className="text-3xl font-bold mb-4">Déroulé de la journée</h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
             Cette première journée a été consacrée à poser les fondations du projet. 
-            L'objectif principal était de définir clairement la vision, les objectifs 
-            et l'architecture technique qui guideront le développement tout au long de la semaine.
+            Entre formation et initiation aux machines de découpe (Laser et Cricut), l'équipe a acquis les compétences nécessaires pour avancer.
           </p>
         </section>
 
         <section>
-          <h2 className="text-3xl font-bold mb-4">Analyse des besoins</h2>
+          <h2 className="text-3xl font-bold mb-4">Projet</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             La matinée a été dédiée à l'analyse approfondie des besoins du projet. 
             J'ai identifié les fonctionnalités essentielles, les contraintes techniques 
