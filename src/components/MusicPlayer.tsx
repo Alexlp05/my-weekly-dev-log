@@ -14,15 +14,8 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
   const [bannerDismissed, setBannerDismissed] = useState(false);
   const [forceOverlay, setForceOverlay] = useState(true);
 
-  // Read dismissal flag from localStorage on mount (safe-guard for SSR)
-  useEffect(() => {
-    try {
-      const v = localStorage.getItem("music_banner_dismissed");
-      if (v === "1") setBannerDismissed(true);
-    } catch (e) {
-      // ignore (no localStorage)
-    }
-  }, []);
+  // Note: we no longer read a dismissal flag on mount so the banner will
+  // always appear until the user explicitly clicks Unmute or Close.
 
   useEffect(() => {
     const audio = audioRef.current;
