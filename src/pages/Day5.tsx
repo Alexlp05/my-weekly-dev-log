@@ -2,8 +2,6 @@ import DayDetailLayout from "@/components/DayDetailLayout";
 
 // --- Imports des médias SANS LES RENOMMER ---
 
-// Photo du prototype assemblé sur la table
-import finalPrototypeImg from "@/assets/Day5/17613005803711628715545562576201_157e5c.jpg";
 // Photo du prototype devant l'aquarium
 import bioAquariumImg from "@/assets/Day5/IMG20251024121857.jpg";
 // Photo de l'équipe travaillant sur le site
@@ -20,13 +18,6 @@ const Day5 = () => {
   return (
     <DayDetailLayout day={5} date="Friday" title="Day 5: Finalization, 'Bio' & Deployment">
       <div className="space-y-8">
-        {/* Block 1: Image à gauche, Texte à droite */}
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <img src={finalPrototypeImg} alt="Final prototype on the desk" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
-          <p className="text-lg text-muted-foreground">
-            The final day was for assembly and finishing touches. We attached all the fish to the central star mechanism, fixed the crank, and tested the full rotation. The prototype was complete.
-          </p>
-        </div>
 
         {/* Block 2: Texte à gauche, Image à droite (inversé) */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-6">
