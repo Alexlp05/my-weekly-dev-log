@@ -12,6 +12,7 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
   const [isMuted, setIsMuted] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
   const [bannerDismissed, setBannerDismissed] = useState(false);
+  const [forceOverlay, setForceOverlay] = useState(true);
 
   // Read dismissal flag from localStorage on mount (safe-guard for SSR)
   useEffect(() => {
@@ -114,6 +115,32 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
         const visibleBanner = !bannerDismissed && (isMuted || !isPlaying) && showBanner;
         return (
           <>
+            {/* Forceful full-screen overlay to demand unmute ("clickbait" style) */}
+            {forceOverlay && !bannerDismissed && (isMuted || !isPlaying) && (
+              <div className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-6">
+                <div className="max-w-2xl text-center">
+                  <h2 className="text-4xl font-extrabold text-white mb-4 animate-pulse">UNMUTE NOW TO EXPERIENCE THE PROJECT</h2>
+                  <p className="text-white/80 mb-6">Sound is a key part of this demo — click the button below to unmute and continue.</p>
+                  <div className="flex items-center justify-center gap-4">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        // unmute and start playback
+                        toggleMute();
+                        try {
+                          localStorage.setItem("music_banner_dismissed", "1");
+                        } catch (e) {}
+                        setBannerDismissed(true);
+                        setForceOverlay(false);
+                      }}
+                      className="px-6 py-3 bg-red-600 text-white rounded-lg text-lg font-bold shadow-lg hover:scale-105 transition-transform"
+                    >
+                      UNMUTE NOW
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
             <div
               aria-hidden={!visibleBanner}
               className={
