@@ -20,7 +20,7 @@ const Timeline = () => {
       description: "Learning additive mfg and Fusion 360",
       achievements: [
         "3D printing workshop (Bambu Lab)",
-        "Modeled a 'Vouvouzela' in Fusion 360",
+        "Modeled a 'Vuvuzela' in Fusion 360",
         "Finalized carousel schematics",
       ],
     },
@@ -43,7 +43,7 @@ const Timeline = () => {
       achievements: [
         "Assembled all the origami fish",
         "Successful demo of the full carousel",
-        "3D printed a (failed) Vouvouzela",
+        "3D printed a (failed) Vuvuzela",
       ],
     },
     {

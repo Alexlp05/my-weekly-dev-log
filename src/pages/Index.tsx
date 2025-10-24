@@ -31,7 +31,21 @@ const Index = () => {
             </Link>
           </h1>
 
-          <img src={projectIllustration} alt="Finished fish carousel" className="w-full md:w-2/3 lg:w-1/2 mx-auto h-auto rounded-lg mb-4 shadow-lg max-h-[420px] object-cover" />
+          {/* ----- MODIFICATION ICI ----- */}
+          {/* L'image et sa nouvelle légende sont enveloppées dans un conteneur div */}
+          <div className="w-full md:w-2/3 lg:w-1/2 mx-auto mb-4">
+            <img 
+              src={projectIllustration} 
+              alt="Finished fish carousel" 
+              className="w-full h-auto rounded-lg shadow-lg max-h-[420px] object-cover" 
+            />
+            {/* Ligne ajoutée pour la légende de l'image */}
+            <p className="text-xs text-muted-foreground text-center italic mt-1.5">
+              *Image generated from a real photo and enhanced by AI.
+            </p>
+          </div>
+          {/* ----- FIN DE LA MODIFICATION ----- */}
+
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Our project is a manual fish carousel. The goal is to create a fluid, organic movement that simulates swimming. The fish,
