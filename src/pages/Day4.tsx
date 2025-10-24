@@ -87,7 +87,8 @@ const Day4 = () => {
           />
           <p className="text-lg text-muted-foreground">
             And the final result of our 3D printed side project? A complete failure! The Vouvouzela made absolutely no sound, but it gave us a great laugh.
-          </all>
+          </p> 
+          {/* L'ERREUR EST CORRIGÉE ICI : </p> au lieu de </all> */}
         </div>
       </div>
     </DayDetailLayout>
