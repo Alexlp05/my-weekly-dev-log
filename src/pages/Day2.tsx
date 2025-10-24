@@ -4,6 +4,7 @@ import handleSketchImg from "@/assets/Day2/IMG20251021102211.jpg";
 import fusionModelImg from "@/assets/Day2/IMG20251021114917.jpg";
 import carouselSketchImg from "@/assets/Day2/566201437_2011970932899143_3389850899492678404_n.jpg";
 
+
 const Day2 = () => {
   return (
     <DayDetailLayout day={2} date="Tuesday" title="Day 2: Additive Manufacturing and 3D Modeling">
