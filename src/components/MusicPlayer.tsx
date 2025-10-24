@@ -11,6 +11,17 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [showBanner, setShowBanner] = useState(true);
+  const [bannerDismissed, setBannerDismissed] = useState(false);
+
+  // Read dismissal flag from localStorage on mount (safe-guard for SSR)
+  useEffect(() => {
+    try {
+      const v = localStorage.getItem("music_banner_dismissed");
+      if (v === "1") setBannerDismissed(true);
+    } catch (e) {
+      // ignore (no localStorage)
+    }
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -94,29 +105,61 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
 
   return (
     <>
-      {/* Full-width unmute banner */}
-      {showBanner && (isMuted || !isPlaying) && (
-        <div className="fixed top-0 left-0 w-full bg-primary text-primary-foreground py-2 px-4 flex items-center justify-between z-50">
-          <div className="text-sm">Please unmute for a better experience</div>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={toggleMute}
-              className="inline-flex items-center px-3 py-1 rounded-md text-sm font-medium bg-primary-foreground text-primary"
+      {/* Full-width unmute banner (sliding) */}
+      {/**
+       * visibleBanner: banner is shown when not dismissed AND the audio is muted or not playing
+       * we render the banner and a spacer so the page content is pushed down (better UX)
+       */}
+      {(() => {
+        const visibleBanner = !bannerDismissed && (isMuted || !isPlaying) && showBanner;
+        return (
+          <>
+            <div
+              aria-hidden={!visibleBanner}
+              className={
+                `fixed top-0 left-0 w-full z-50 transform transition-transform duration-300 ease-out ` +
+                (visibleBanner ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none")
+              }
             >
-              Unmute
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowBanner(false)}
-              aria-label="Close banner"
-              className="inline-flex items-center px-2 py-1 rounded-md text-sm bg-secondary/20 text-secondary-foreground"
-            >
-              ✕
-            </button>
-          </div>
-        </div>
-      )}
+              <div className="bg-primary text-primary-foreground py-2 px-4 flex items-center justify-between">
+                <div className="text-sm">Please unmute for a better experience</div>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      toggleMute();
+                      // dismiss after user explicitly unmuted
+                      try {
+                        localStorage.setItem("music_banner_dismissed", "1");
+                      } catch (e) {}
+                      setBannerDismissed(true);
+                    }}
+                    className="inline-flex items-center px-3 py-1 rounded-md text-sm font-medium bg-primary-foreground text-primary"
+                  >
+                    Unmute
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      try {
+                        localStorage.setItem("music_banner_dismissed", "1");
+                      } catch (e) {}
+                      setBannerDismissed(true);
+                    }}
+                    aria-label="Close banner"
+                    className="inline-flex items-center px-2 py-1 rounded-md text-sm bg-secondary/20 text-secondary-foreground"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* spacer: push page content down when banner visible to avoid overlap */}
+            <div className={visibleBanner ? "h-12" : "h-0"} aria-hidden />
+          </>
+        );
+      })()}
     <div className={`flex items-center space-x-3 ${className}`}>
       <audio ref={audioRef} loop={loop} preload="auto" aria-hidden="true">
         <source src={src} type="audio/mpeg" />
