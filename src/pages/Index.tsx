@@ -25,7 +25,7 @@ const Index = () => {
         <div className="relative z-10 text-center max-w-4xl mx-auto space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-1000">
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <Link to="/" className="inline-block">
-              <span className="bg-gradient-to-r from-primary via-accent to-primary-glow bg-clip-text text-transparent">
+              <span className="bg-gradient-to-primary from-r via-primary-glow to-accent bg-clip-text text-transparent">
                 Project: Le Manège de Poséidon
               </span>
             </Link>
