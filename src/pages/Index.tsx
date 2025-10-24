@@ -95,6 +95,10 @@ const Index = () => {
         <Timeline />
       </div>
 
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          Thank you to our teacher, BADR Louis & MARRS Jonah , for guiding us through this intensive week of learning and creation. Your expertise and support were invaluable in bringing this project to life.
+          </p>
+
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">

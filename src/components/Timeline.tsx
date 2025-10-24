@@ -49,10 +49,10 @@ const Timeline = () => {
     {
       day: 5,
       date: "Friday",
-      title: "Finalization & 'Bio'",
-      description: "Final paint, adjustments, and documentation",
+      title: "Finalization & Site Deployment",
+      description: "Adjustments, and documentation",
       achievements: [
-        "Painting and final assembly",
+        "Final assembly",
         "Fine-tuning the mechanism",
         "Final project photos & videos",
       ],
