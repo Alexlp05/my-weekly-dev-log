@@ -1,22 +1,13 @@
 import DayDetailLayout from "@/components/DayDetailLayout";
-import { ImageBlocks } from "@/components/ImageBlocks";
 
 const Day2 = () => {
   return (
-    <DayDetailLayout day={2} date="Tuesday" title="Day 2: Design & Prototyping">
+    <DayDetailLayout day={2} date="Tuesday" title="Day 2: Additive Manufacturing and 3D Modeling">
       <div className="space-y-8">
-        <section>
-          <ul className="list-disc list-inside space-y-2 text-lg text-muted-foreground">
-            <li>Rapid prototyping with cardboard and foam for quick validation.</li>
-            <li>3D printed mounting tests to verify tolerances.</li>
-            <li>Laser-cut base plates prepared for assembly tests.</li>
-            <li>Iterative adjustments after each physical test.</li>
-          </ul>
-        </section>
-
-        <section>
-          <ImageBlocks />
-        </section>
+        <p>
+          This day was dedicated to additive manufacturing. We had a course and workshop on the principles of 3D printing and how it differs from subtractive methods.
+        </p>
+        <img src="/placeholder.svg" alt="3D printing workshop" className="w-full h-auto rounded-lg my-4" />
       </div>
     </DayDetailLayout>
   );
