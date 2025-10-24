@@ -22,7 +22,7 @@ const Day4 = () => {
         <div className="flex flex-col md:flex-row items-center gap-6">
           <img src={slicerImg} alt="Vouvouzela in Bambu Slicer" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
           <p className="text-lg text-muted-foreground">
-            We started a fun side project: 3D printing a Vouvouzela. Here are the parts laid out in the Bambu Lab slicer software, ready for printing.
+            We started a fun side project: 3D printing a Vuvuzela. Here are the parts laid out in the Bambu Lab slicer software, ready for printing.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ const Day4 = () => {
             playsInline 
           />
           <p className="text-lg text-muted-foreground">
-            We sent the file to the printer. This timelapse shows the Vouvouzela parts being printed quickly on the Bambu Lab machine.
+            We sent the file to the printer. This timelapse shows the Vuvuzela parts being printed quickly on the Bambu Lab machine.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ const Day4 = () => {
             playsInline 
           />
           <p className="text-lg text-muted-foreground">
-            And the final result of our 3D printed side project? A complete failure! The Vouvouzela made absolutely no sound, but it gave us a great laugh.
+            And the final result of our 3D printed side project? A complete failure! The Vuvuzela made absolutely no sound, but it gave us a great laugh.
           </p> 
           {/* L'ERREUR EST CORRIGÉE ICI : </p> au lieu de </all> */}
         </div>
