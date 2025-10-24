@@ -17,14 +17,34 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
     audio.loop = loop;
     audio.preload = "auto";
 
-    // Try to autoplay unmuted on mount. Note: browsers may block this.
+    // Force audio to be unmuted and attempt autoplay on mount.
+    // Note: browsers may still block unmuted autoplay despite this attempt.
+    try {
+      audio.muted = false; // ensure audio is unmuted
+    } catch (e) {
+      // ignore if property cannot be set
+    }
+    // Hint to browsers/players for inline playback on mobile (some TS setups don't include playsInline)
+    try {
+      // @ts-ignore
+      audio.playsInline = true;
+    } catch (e) {
+      // ignore
+    }
+    audio.autoplay = true;
+    try {
+      audio.volume = 1;
+    } catch (e) {
+      // ignore
+    }
+
+    // Try to autoplay unmuted on mount. If the browser blocks it, there's no programmatic bypass.
     const tryAutoplay = async () => {
       try {
         await audio.play();
         setIsPlaying(true);
       } catch (err) {
         // Autoplay was blocked by browser policy. Audio will not start until user interaction.
-        // We don't force muted autoplay or show an unmute button per your request.
         console.warn("Autoplay blocked by browser:", err);
         setIsPlaying(false);
       }
