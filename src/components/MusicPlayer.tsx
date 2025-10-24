@@ -9,6 +9,7 @@ type MusicPlayerProps = {
 export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 hour music.mp3", loop = true, className = "" }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -39,16 +40,17 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
     }
 
     // Try to autoplay unmuted on mount. If the browser blocks it, there's no programmatic bypass.
-    const tryAutoplay = async () => {
-      try {
-        await audio.play();
-        setIsPlaying(true);
-      } catch (err) {
-        // Autoplay was blocked by browser policy. Audio will not start until user interaction.
-        console.warn("Autoplay blocked by browser:", err);
-        setIsPlaying(false);
-      }
-    };
+      const tryAutoplay = async () => {
+        try {
+          await audio.play();
+          setIsPlaying(true);
+          setIsMuted(!!audio.muted);
+        } catch (err) {
+          // Autoplay was blocked by browser policy. Audio will not start until user interaction.
+          console.warn("Autoplay blocked by browser:", err);
+          setIsPlaying(false);
+        }
+      };
 
     tryAutoplay();
 
@@ -63,23 +65,29 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [src, loop]);
 
-  const toggleMusic = async () => {
+  // Toggle mute/unmute without pausing playback. If playback is not started yet,
+  // attempting to unmute will also try to start playback (user gesture will allow it).
+  const toggleMute = async () => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
-      return;
-    }
-
     try {
-      await audio.play();
-      setIsPlaying(true);
+      const newMuted = !audio.muted;
+      audio.muted = newMuted;
+      setIsMuted(newMuted);
+
+      // If audio isn't playing yet and user just attempted to unmute, start playback.
+      if (!isPlaying && !newMuted) {
+        try {
+          await audio.play();
+          setIsPlaying(true);
+        } catch (err) {
+          console.warn("Play blocked on unmute:", err);
+          setIsPlaying(false);
+        }
+      }
     } catch (err) {
-      // Play was blocked
-      console.warn("Play blocked:", err);
-      setIsPlaying(false);
+      console.warn("Toggle mute failed:", err);
     }
   };
 
@@ -93,13 +101,13 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
 
       <button
         type="button"
-        onClick={toggleMusic}
-        aria-pressed={isPlaying}
-        aria-label={isPlaying ? "Pause music" : "Play music"}
+        onClick={toggleMute}
+        aria-pressed={!isMuted}
+        aria-label={isMuted ? "Unmute music" : "Mute music"}
         className={`inline-flex items-center px-3 py-2 rounded-md shadow-sm text-sm font-medium bg-primary text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50`}
       >
-        <span className="mr-2">{isPlaying ? "🔊" : "🔇"}</span>
-        <span>{isPlaying ? "Pause" : "Play"}</span>
+        <span className="mr-2">{isMuted ? "�" : "�"}</span>
+        <span>{isMuted ? "Unmute" : "Mute"}</span>
       </button>
     </div>
   );
