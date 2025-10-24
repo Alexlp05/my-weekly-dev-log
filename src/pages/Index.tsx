@@ -106,7 +106,7 @@ const Index = () => {
           
           {/* Ligne de copyright (espacée) */}
           <p className="mt-4">
-            Project created with passion · {new Date().getFullYear()}
+            Project created with passion by Maxime VIAL, Paul SIMONET & Alexandre LE PORT · {new Date().getFullYear()}
           </p>
 
         </div>
