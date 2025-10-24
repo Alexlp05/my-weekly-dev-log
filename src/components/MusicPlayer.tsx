@@ -104,6 +104,29 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
     }
   };
 
+  // Explicitly unmute and try to play. Use for banner/overlay user gestures to
+  // ensure we always attempt to unmute (instead of toggling which could accidentally mute).
+  const unmuteAndPlay = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    try {
+      audio.muted = false;
+      setIsMuted(false);
+
+      // Try to start playback (user gesture should allow this)
+      try {
+        await audio.play();
+        setIsPlaying(true);
+      } catch (err) {
+        console.warn("Play blocked on unmute:", err);
+        setIsPlaying(false);
+      }
+    } catch (err) {
+      console.warn("Unmute failed:", err);
+    }
+  };
+
   return (
     <>
       {/* Full-width unmute banner (sliding) */}
@@ -126,9 +149,9 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
                   <div className="flex items-center justify-center gap-4">
                     <button
                       type="button"
-                      onClick={() => {
-                        // unmute and start playback
-                        toggleMute();
+                      onClick={async () => {
+                        // explicitly unmute and start playback (user gesture)
+                        await unmuteAndPlay();
                         try {
                           localStorage.setItem("music_banner_dismissed", "1");
                         } catch (e) {}
@@ -155,8 +178,8 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
                 <div className="flex items-center gap-2">
                   <button
                     type="button"
-                    onClick={() => {
-                      toggleMute();
+                    onClick={async () => {
+                      await unmuteAndPlay();
                       // dismiss after user explicitly unmuted
                       try {
                         localStorage.setItem("music_banner_dismissed", "1");
