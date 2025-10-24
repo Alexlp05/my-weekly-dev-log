@@ -95,14 +95,6 @@ const Index = () => {
         <Timeline />
       </div>
 
-<footer className="py-8 px-4 border-t border-border">
-  <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-    
-{/* Timeline Section */}
-      <div id="timeline" className="bg-secondary/30">
-        <Timeline />
-      </div>
-
       {/* Footer (UN SEUL FOOTER ICI) */}
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
