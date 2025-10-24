@@ -47,7 +47,7 @@ const Day5 = () => {
         <div className="flex flex-col md:flex-row-reverse items-center gap-6">
           <img src={teamWorkingImg} alt="Team working on the project website" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
           <p className="text-lg text-muted-foreground">
-            With the physical build complete, the focus shifted to documenting our process. The team gathered to write the text and select the media for this website.
+            With the physical build complete, the focus shifted to documenting our process. The team gathered to write the text and select the media for this website. We use Lovable to generate the first version of the site, and we continue to iterate on it by customizing it.
           </p>
         </div>
 
