@@ -8,9 +8,7 @@ type MusicPlayerProps = {
 
 export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 hour music.mp3", loop = true, className = "" }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-  const [autoplayBlocked, setAutoplayBlocked] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -19,34 +17,21 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
     audio.loop = loop;
     audio.preload = "auto";
 
-    // Try to autoplay unmuted. If blocked, try muted autoplay (some browsers allow it).
+    // Try to autoplay unmuted on mount. Note: browsers may block this.
     const tryAutoplay = async () => {
       try {
         await audio.play();
         setIsPlaying(true);
-        setIsMuted(audio.unmuted);
-        setAutoplayBlocked(false);
-        return;
       } catch (err) {
-        // Unmuted autoplay blocked — try muted autoplay as a fallback
-      }
-
-      try {
-        audio.muted = true;
-        await audio.play();
-        setIsPlaying(true);
-        setIsMuted(true);
-        setAutoplayBlocked(false);
-      } catch (err) {
-        // Muted autoplay also blocked. We'll show a control so the user can start audio.
+        // Autoplay was blocked by browser policy. Audio will not start until user interaction.
+        // We don't force muted autoplay or show an unmute button per your request.
+        console.warn("Autoplay blocked by browser:", err);
         setIsPlaying(false);
-        setAutoplayBlocked(true);
       }
     };
 
     tryAutoplay();
 
-    // Cleanup on unmount
     return () => {
       try {
         audio.pause();
@@ -71,22 +56,10 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
     try {
       await audio.play();
       setIsPlaying(true);
-      setIsMuted(audio.muted);
-      setAutoplayBlocked(false);
     } catch (err) {
+      // Play was blocked
+      console.warn("Play blocked:", err);
       setIsPlaying(false);
-      setAutoplayBlocked(true);
-    }
-  };
-
-  const handleUnmute = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.muted = false;
-    setIsMuted(false);
-    // If audio was not playing, try to play now that it's unmuted
-    if (!isPlaying) {
-      audio.play().then(() => setIsPlaying(true)).catch(() => setAutoplayBlocked(true));
     }
   };
 
@@ -108,23 +81,6 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
         <span className="mr-2">{isPlaying ? "🔊" : "🔇"}</span>
         <span>{isPlaying ? "Pause" : "Play"}</span>
       </button>
-
-      {/* If autoplay worked but audio is muted (muted autoplay fallback), allow unmute */}
-      {isMuted && isPlaying && (
-        <button
-          type="button"
-          onClick={handleUnmute}
-          aria-label="Unmute music"
-          className="inline-flex items-center px-2 py-1 rounded-md text-sm bg-secondary text-secondary-foreground"
-        >
-          🔈 Unmute
-        </button>
-      )}
-
-      {/* If autoplay was blocked entirely, hint the user to click to enable audio */}
-      {autoplayBlocked && (
-        <div className="text-sm text-muted-foreground">Autoplay blocked by browser — click Play to enable audio.</div>
-      )}
     </div>
   );
 }
