@@ -131,9 +131,10 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
         aria-label={isMuted ? "Unmute music" : "Mute music"}
         className={`inline-flex items-center px-3 py-2 rounded-md shadow-sm text-sm font-medium bg-primary text-white hover:opacity-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50`}
       >
-        <span className="mr-2">{isMuted ? "�" : "�"}</span>
+        <span className="mr-2">{isMuted ? "🔇" : "🔊"}</span>
         <span>{isMuted ? "Unmute" : "Mute"}</span>
       </button>
     </div>
+    </>
   );
 }
