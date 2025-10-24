@@ -1,4 +1,5 @@
 import DayDetailLayout from "@/components/DayDetailLayout";
+import testVideo from "@/assets/Day3/premier_test_carrousel.mp4";
 
 const Day3 = () => {
   return (
@@ -7,17 +8,17 @@ const Day3 = () => {
         <p>
           Today, the physical build began. The first major step was using the laser cutter to fabricate the central wooden structure, carefully etching the score lines that will form the 'wave'.
         </p>
-        <img src="/placeholder.svg" alt="Laser cutting the main wooden part" className="w-full h-auto rounded-lg my-4" />
+
+        <div className="flex flex-col md:flex-row items-start gap-6">
+          <video src={testVideo} controls className="w-full md:w-2/3 rounded-lg shadow" />
+          <p className="text-lg text-muted-foreground md:w-1/3">
+            First carousel test: a short recording of the initial manual rotation and assembly behavior. We used this test to check clearances, balance and the visual rhythm of the fish movement.
+          </p>
+        </div>
 
         <p>
-          While the laser was running, we moved to the Cricut to cut all the fish silhouettes and their corresponding wave-shaped supports from heavy cardstock.
+          While the laser was running, we continued refining the fish silhouettes and supports.
         </p>
-        <img src="/placeholder.svg" alt="Cricut cutting the fish shapes" className="w-full h-auto rounded-lg my-4" />
-
-        <p>
-          In parallel with fabrication, we set up this project website. We used a template, created a Github repository, and deployed the first version on Vercel.
-        </p>
-        <img src="/placeholder.svg" alt="Github repository screenshot" className="w-full h-auto rounded-lg my-4" />
       </div>
     </DayDetailLayout>
   );

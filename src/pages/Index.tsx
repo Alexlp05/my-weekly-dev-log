@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Timeline from "@/components/Timeline";
 import heroBg from "@/assets/hero-bg.jpg";
+import projectIllustration from "@/assets/Gemini_Generated_Image_vbvrcnvbvrcnvbvr.png";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -30,7 +31,7 @@ const Index = () => {
             </Link>
           </h1>
 
-          <img src="/placeholder.svg" alt="Finished fish carousel" className="w-full h-auto rounded-lg mb-4" />
+          <img src={projectIllustration} alt="Finished fish carousel" className="w-full h-auto rounded-lg mb-4 shadow-lg" />
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Our project is a manual fish carousel. The goal is to create a fluid, organic movement that simulates swimming. The fish,
