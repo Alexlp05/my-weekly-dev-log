@@ -8,6 +8,7 @@ const Day1 = () => {
   return (
     <DayDetailLayout day={1} date="Monday" title="Day 1: Discovery and Ideation">
       <div className="space-y-8">
+        {/* Block 1: Image à gauche, Texte à droite */}
         <div className="flex flex-col md:flex-row items-center gap-6">
           <img src={cricutImg} alt="Cricut workshop" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
           <p className="text-lg text-muted-foreground">
@@ -15,21 +16,26 @@ const Day1 = () => {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-6">
+        {/* Block 2: Texte à gauche, Image à droite (inversé) - TEXTE INTERVERTI */}
+        <div className="flex flex-col md:flex-row-reverse items-center gap-6">
           <img src={laserInitImg} alt="Laser cutter initiation" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
           <p className="text-lg text-muted-foreground">
-            Laser cutting initiation: first tests with the laser cutter to validate power and speed settings. We practiced engraving score lines and cutting prototypes from thin plywood.
-          </p>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <img src={rhinoFishImg} alt="First Rhino fish illustration" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
-          <p className="text-lg text-muted-foreground">
+            {/* Ceci est le texte de Rhino */}
             Rhino sketches: initial fish silhouettes were drawn in Rhino as vector shapes. These served as the base artwork for the Cricut and later the laser-cut supports.
           </p>
         </div>
 
+        {/* Block 3: Image à gauche, Texte à droite - TEXTE INTERVERTI */}
         <div className="flex flex-col md:flex-row items-center gap-6">
+          <img src={rhinoFishImg} alt="First Rhino fish illustration" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
+          <p className="text-lg text-muted-foreground">
+            {/* Ceci est le texte du Laser */}
+            Laser cutting initiation: first tests with the laser cutter to validate power and speed settings. We practiced engraving score lines and cutting prototypes from thin plywood.
+          </p>
+        </div>
+
+        {/* Block 4: Texte à gauche, Image à droite (inversé) */}
+        <div className="flex flex-col md:flex-row-reverse items-center gap-6">
           <img src={starFoldImg} alt="Star fold laser-cut" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
           <p className="text-lg text-muted-foreground">
             Star fold prototype: an early laser-cut design demonstrating foldable geometry. This piece helped us validate the scoring and folding approach for more complex parts.
