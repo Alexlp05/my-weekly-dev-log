@@ -95,18 +95,36 @@ const Index = () => {
         <Timeline />
       </div>
 
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          Thank you to our teacher, BADR Louis & MARRS Jonah , for guiding us through this intensive week of learning and creation. Your expertise and support were invaluable in bringing this project to life.
-          </p>
+<footer className="py-8 px-4 border-t border-border">
+  <div className="max-w-6xl mx-auto text-center text-muted-foreground">
+    
+{/* Timeline Section */}
+      <div id="timeline" className="bg-secondary/30">
+        <Timeline />
+      </div>
 
-      {/* Footer */}
+      {/* Footer (UN SEUL FOOTER ICI) */}
       <footer className="py-8 px-4 border-t border-border">
         <div className="max-w-6xl mx-auto text-center text-muted-foreground">
-         <p>Project created with passion · {new Date().getFullYear()}</p>
+          
+          {/* Texte de remerciement ajouté */}
+          <p className="text-sm italic max-w-xl mx-auto">
+            Thank you to our teachers, BADR Louis & MARRS Jonah, for guiding us through this intensive week of learning and creation. Your expertise and support were invaluable in bringing this project to life.
+          </p>
+          
+          {/* Ligne de copyright (espacée) */}
+          <p className="mt-4">
+            Project created with passion · {new Date().getFullYear()}
+          </p>
+
         </div>
       </footer>
-    </div>
+      {/* Fin du footer */}
+
+    </div> // Ceci est le </div> principal de votre composant
   );
 };
+
+export default Index;
 
 export default Index;
