@@ -8,9 +8,9 @@ type MusicPlayerProps = {
 
 export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 hour music.mp3", loop = true, className = "" }: MusicPlayerProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(true);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -24,7 +24,7 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
       try {
         await audio.play();
         setIsPlaying(true);
-        setIsMuted(audio.muted);
+        setIsMuted(audio.unmuted);
         setAutoplayBlocked(false);
         return;
       } catch (err) {
