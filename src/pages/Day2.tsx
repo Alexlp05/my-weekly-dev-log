@@ -2,7 +2,7 @@ import DayDetailLayout from "@/components/DayDetailLayout";
 import measureHandleImg from "@/assets/Day2/IMG20251021102305.jpg";
 import handleSketchImg from "@/assets/Day2/IMG20251021102211.jpg";
 import fusionModelImg from "@/assets/Day2/IMG20251021114917.jpg";
-import carouselSketchImg from "@/assets/Day2/IMG_20251024_114347_270.jpg";
+import carouselSketchImg from "@/assets/Day2/566201437_2011970932899143_3389850899492678404_n.jpg";
 
 const Day2 = () => {
   return (
