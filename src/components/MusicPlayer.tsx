@@ -112,11 +112,13 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
        * we render the banner and a spacer so the page content is pushed down (better UX)
        */}
       {(() => {
-        const visibleBanner = !bannerDismissed && (isMuted || !isPlaying) && showBanner;
+        // Show the banner unless the user dismissed it. Keep logic simple so the banner
+        // reliably appears and forces the unmute overlay when requested.
+        const visibleBanner = !bannerDismissed && showBanner;
         return (
           <>
             {/* Forceful full-screen overlay to demand unmute ("clickbait" style) */}
-            {forceOverlay && !bannerDismissed && (isMuted || !isPlaying) && (
+            {forceOverlay && !bannerDismissed && showBanner && (
               <div className="fixed inset-0 z-[60] bg-black/90 flex items-center justify-center p-6">
                 <div className="max-w-2xl text-center">
                   <h2 className="text-4xl font-extrabold text-white mb-4 animate-pulse">UNMUTE NOW TO EXPERIENCE THE PROJECT</h2>
