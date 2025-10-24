@@ -10,6 +10,7 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -92,6 +93,30 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
   };
 
   return (
+    <>
+      {/* Full-width unmute banner */}
+      {showBanner && (isMuted || !isPlaying) && (
+        <div className="fixed top-0 left-0 w-full bg-primary text-primary-foreground py-2 px-4 flex items-center justify-between z-50">
+          <div className="text-sm">Please unmute for a better experience</div>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleMute}
+              className="inline-flex items-center px-3 py-1 rounded-md text-sm font-medium bg-primary-foreground text-primary"
+            >
+              Unmute
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowBanner(false)}
+              aria-label="Close banner"
+              className="inline-flex items-center px-2 py-1 rounded-md text-sm bg-secondary/20 text-secondary-foreground"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     <div className={`flex items-center space-x-3 ${className}`}>
       <audio ref={audioRef} loop={loop} preload="auto" aria-hidden="true">
         <source src={src} type="audio/mpeg" />

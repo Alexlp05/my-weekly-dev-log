@@ -25,7 +25,7 @@ const Index = () => {
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <Link to="/" className="inline-block">
               <span className="bg-gradient-to-r from-primary via-accent to-primary-glow bg-clip-text text-transparent">
-                Project: The Manual Fish Carousel
+                Project: Le Manège de Paséidon
               </span>
             </Link>
           </h1>
