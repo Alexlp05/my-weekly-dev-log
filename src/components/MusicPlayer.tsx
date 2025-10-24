@@ -107,14 +107,31 @@ export default function MusicPlayer({ src = "/Its A Small World Disney repeat 1 
   // Explicitly unmute and try to play. Use for banner/overlay user gestures to
   // ensure we always attempt to unmute (instead of toggling which could accidentally mute).
   const unmuteAndPlay = async () => {
-    const audio = audioRef.current;
+    // Try to get the audio element from ref, fallback to document query in case of render ordering issues
+    let audio = audioRef.current as HTMLAudioElement | null;
+    if (!audio) {
+      audio = document.querySelector<HTMLAudioElement>("audio");
+    }
     if (!audio) return;
 
     try {
-      audio.muted = false;
+      // Ensure it's unmuted at both property and attribute level
+      try {
+        audio.muted = false;
+      } catch (e) {
+        // ignore
+      }
+      try {
+        audio.removeAttribute("muted");
+      } catch (e) {
+        // ignore
+      }
+      try {
+        audio.volume = 1;
+      } catch (e) {}
       setIsMuted(false);
 
-      // Try to start playback (user gesture should allow this)
+      // Try to start playback (user gesture should allow this). If play is blocked it will be logged.
       try {
         await audio.play();
         setIsPlaying(true);
