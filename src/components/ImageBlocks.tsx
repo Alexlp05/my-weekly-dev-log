@@ -159,4 +159,14 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
   );
 };
 
+export const ImageBlocks: React.FC<{ items?: GalleryItem[]; variant?: ImageGalleryProps['variant'] }> = ({ items, variant = 'cards' }) => {
+  const defaultItems: GalleryItem[] = items || [
+    { src: '/placeholder.svg', alt: 'placeholder', title: 'Placeholder 1', description: 'Illustration', caption: 'Placeholder image' },
+    { src: '/placeholder.svg', alt: 'placeholder', title: 'Placeholder 2', description: 'Illustration', caption: 'Placeholder image' },
+    { src: '/placeholder.svg', alt: 'placeholder', title: 'Placeholder 3', description: 'Illustration', caption: 'Placeholder image' },
+  ];
+
+  return <ImageGallery items={defaultItems} variant={variant} />;
+};
+
 export default ImageCard;
