@@ -8,6 +8,10 @@ const Day1 = () => {
   return (
     <DayDetailLayout day={1} date="Monday" title="Day 1: Discovery and Ideation">
       <div className="space-y-8">
+
+        {/* Activity 0: Dart Counter */}
+
+
         {/* Block 1: Image à gauche, Texte à droite */}
         <div className="flex flex-col md:flex-row items-center gap-6">
           <img src={cricutImg} alt="Cricut workshop" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
@@ -16,20 +20,18 @@ const Day1 = () => {
           </p>
         </div>
 
-        {/* Block 2: Texte à gauche, Image à droite (inversé) - TEXTE INTERVERTI */}
+        {/* Block 2: Texte à gauche, Image à droite (inversé) - RHINO */}
         <div className="flex flex-col md:flex-row-reverse items-center gap-6">
-          <img src={laserInitImg} alt="Laser cutter initiation" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
+          <img src={rhinoFishImg} alt="Rhino sketches" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
           <p className="text-lg text-muted-foreground">
-            {/* Ceci est le texte de Rhino */}
             Rhino sketches: initial fish silhouettes were drawn in Rhino as vector shapes. These served as the base artwork for the Cricut and later the laser-cut supports.
           </p>
         </div>
 
-        {/* Block 3: Image à gauche, Texte à droite - TEXTE INTERVERTI */}
+        {/* Block 3: Image à gauche, Texte à droite - LASER */}
         <div className="flex flex-col md:flex-row items-center gap-6">
-          <img src={rhinoFishImg} alt="First Rhino fish illustration" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
+          <img src={laserInitImg} alt="Laser cutting initiation" className="w-full md:w-1/3 h-auto rounded-lg shadow" />
           <p className="text-lg text-muted-foreground">
-            {/* Ceci est le texte du Laser */}
             Laser cutting initiation: first tests with the laser cutter to validate power and speed settings. We practiced engraving score lines and cutting prototypes from thin plywood.
           </p>
         </div>

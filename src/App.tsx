@@ -14,6 +14,8 @@ import Day2 from "./pages/Day2";
 import Day3 from "./pages/Day3";
 import Day4 from "./pages/Day4";
 import Day5 from "./pages/Day5";
+import TeachableMachinePart1 from "./pages/TeachableMachinePart1";
+import TeachableMachinePart2 from "./pages/TeachableMachinePart2";
 import NotFound from "./pages/NotFound";
 
 
@@ -38,6 +40,9 @@ const App = () => (
           <Route path="/day-3" element={<Day3 />} />
           <Route path="/day-4" element={<Day4 />} />
           <Route path="/day-5" element={<Day5 />} />
+          <Route path="/day-5" element={<Day5 />} />
+          <Route path="/teachable-machine/part-1" element={<TeachableMachinePart1 />} />
+          <Route path="/teachable-machine/part-2" element={<TeachableMachinePart2 />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Waves, Rocket } from "lucide-react";
+import { Waves, Rocket, Brain } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Index = () => {
@@ -62,6 +62,28 @@ const Index = () => {
                                     </h2>
                                     <p className="text-muted-foreground leading-relaxed">
                                         Something exciting is coming soon. A sneak peek into the next big innovative idea currently in development.
+                                    </p>
+                                </div>
+                                <div className="mt-auto pt-4">
+                                    <Button variant="ghost" className="group-hover:translate-x-1 transition-transform">
+                                        View Project →
+                                    </Button>
+                                </div>
+                            </div>
+                        </Link>
+
+                        {/* Teachable Machine Card */}
+                        <Link to="/teachable-machine/part-1" className="group md:col-span-2">
+                            <div className="h-full bg-card/40 backdrop-blur-md border border-white/10 p-8 rounded-xl shadow-elegant hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 flex flex-col items-center text-center gap-6 group-hover:bg-card/60">
+                                <div className="w-20 h-20 rounded-full bg-purple-500/20 flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
+                                    <Brain className="w-10 h-10 text-purple-500" />
+                                </div>
+                                <div className="space-y-4">
+                                    <h2 className="text-3xl font-bold group-hover:text-purple-400 transition-colors">
+                                        Teachable Machine & p5.js
+                                    </h2>
+                                    <p className="text-muted-foreground leading-relaxed max-w-2xl">
+                                        Discover how to easily train an AI model to recognize objects and gestures, then us it to control a game in the browser.
                                     </p>
                                 </div>
                                 <div className="mt-auto pt-4">
