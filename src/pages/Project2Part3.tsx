@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, BookOpen, Bug, Hammer, Play } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, BookOpen, Bug, Hammer } from "lucide-react";
 // Patterns - YouTube Video IDs
 const pattern1 = "https://www.youtube.com/embed/mCX0gqyyXhM"; // 1er motif
 const pattern2 = "https://www.youtube.com/embed/BTjgVa-C8ak"; // 1er Courbe
@@ -113,6 +113,8 @@ const LogsPage = () => {
                         </table>
                     </div>
                 </section>
+
+
 
                 <div className="flex justify-center pt-12 border-t border-border">
                     <Link to="/project-x">

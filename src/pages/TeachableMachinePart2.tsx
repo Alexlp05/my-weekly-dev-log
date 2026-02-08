@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Brain, Code, ExternalLink, Gamepad2, Database } from "lucide-react";
+import { ArrowLeft, Brain, Code, ExternalLink, Gamepad2, Database, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import trainingModel1 from "@/assets/TeachableMachine/trainingModel1.mp4";
 import trainingModel2 from "@/assets/TeachableMachine/trainingModel2.mp4";
@@ -303,6 +303,66 @@ function gotResult(error, results) {
                         </div>
                     </CardContent>
                 </Card>
+
+                {/* Showroom / Final Render */}
+                <section className="space-y-8 pb-12">
+                    <div className="flex items-center gap-3 text-pink-500">
+                        <Play className="w-8 h-8" />
+                        <h2 className="text-2xl font-bold uppercase tracking-wider text-foreground">Test / Showroom</h2>
+                    </div>
+
+                    <div className="prose prose-invert max-w-none text-muted-foreground">
+                        <p className="text-lg">
+                            After training the model on Teachable Machine and implementing the logic in p5.js, we moved to the <strong>testing phase</strong>.
+                            The goal was to verify the robustness of the detection in real-world conditions, specifically checking how the system handles transitions between objects and changes in lighting.
+                            We set up a controlled environment with consistent lighting to minimize noise, but also tested with slight variations to ensure the model wasn't "overfitting" on a specific background.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="space-y-4">
+                            <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-md border border-white/10 relative group">
+                                <video
+                                    className="w-full h-full object-cover"
+                                    controls
+                                    preload="metadata"
+                                >
+                                    <source src="/videos/TestOfficiel1.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div className="space-y-1">
+                                <h3 className="text-lg font-bold text-foreground">Test Officiel 1: Initial Integration</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    First full-scale test of the integrated system. We can observe the system accurately recognizing distinct objects like the <strong>Bottle (0)</strong> and <strong>Shoe (1)</strong> in sequence.
+                                    The latency is minimal, though we noticed some jitter when the object is partly out of frame.
+                                    The "Phone Number" string is correctly constructing at the bottom of the screen, validating the debouncing logic (timer).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="space-y-4">
+                            <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-md border border-white/10 relative group">
+                                <video
+                                    className="w-full h-full object-cover"
+                                    controls
+                                    preload="metadata"
+                                >
+                                    <source src="/videos/TestOfficiel2.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div className="space-y-1">
+                                <h3 className="text-lg font-bold text-foreground">Test Officiel 2: Stress Testing & Reset</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    In this second run, we specifically tested the <strong>Reset Trigger (Surprise/Explosion)</strong>.
+                                    Notice how the system instantly clears the phone number when the specific gesture (red explosion card) is presented.
+                                    This confirms that the "Surprise" class effectively acts as a control command rather than just a digit, providing a crucial "Undo" function for the user experience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     );
